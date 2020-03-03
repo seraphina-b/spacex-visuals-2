@@ -13,7 +13,7 @@
     }
 
     .doughnut, .pie {
-        max-width: 50vw
+        max-width: 50vw;
     }
 
     .bar {
@@ -22,7 +22,7 @@
 }
 
 /* Tablet */
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .parent {
         flex-direction: column;
     }
@@ -45,7 +45,7 @@
 }
 
 /* Lil web */
-@media screen and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
     .parent {
         flex-direction: column;
     }
@@ -55,11 +55,11 @@
     }
     
     .outside {
-        max-width: 36vw;
+        max-width: 65vw;
     }
 
     .doughnut, .pie {
-        max-width: 18vw;
+        max-width: 28vw;
     }
 
     .bar {
