@@ -1,0 +1,27 @@
+/* Mobile */
+@media screen and (max-width: 767px) {
+
+}
+
+/* Tablet */
+@media screen and (max-width: 1023px) {
+
+}
+
+/* Lil web */
+@media screen and (max-width: 1279px) {
+
+}
+
+/* Big web */
+@media screen and (min-width: 1280px) {
+    
+}
+
+body {
+    background-color: #fbe4ff
+}
+
+.graph {
+    background-color: #ffffff
+}
