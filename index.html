@@ -9,48 +9,130 @@
         <title>SpaceX</title>
     </head>
     <body>
-        <div id="navbar">
-            <i class="fas fa-bars fa-3x"></i>
-            <div style="font-size: 60px">SpaceX</div>
-            <i class="fas fa-user-circle fa-3x"></i>
-        </div>
-        <div style="font-size: 24px">Live informatie vanuit SpaceX</div>
-        <!-- Outside Arc -->
-        <canvas class="outside graph"></canvas>
-        <script>
-            Chart.defaults.global.defaultFontFamily = 'Oswald, sans-serif';
-            var colors = new Array(7).fill("#dd89e9");
-            var myOut = document.querySelector(".outside").getContext("2d");
-                var outsideGraph = new Chart(myOut, {
-                    type: "bar",
-                    data: {
-                        labels: ["< 20", "20-25", "30-35", "35-40", "40-45", "45 >"],
-                        datasets: [{
-                            backgroundColor: colors,
-                            data: [8, 40, 62, 68, 52, 49, 20]
-                        }],
-                    },
-                    options: {
-                        legend: {
-                            display: false
+            <div id="navbar">
+                <i class="fas fa-bars fa-3x"></i>
+                <div style="font-size: 60px">SpaceX</div>
+                <i class="fas fa-user-circle fa-3x"></i>
+            </div>
+            <div style="font-size: 24px; margin-top: 2rem">Live informatie vanuit SpaceX</div>
+            <div style="margin-top: 1rem; margin-bottom: 2rem">Klik op grafieken voor meer informatie</div>
+
+            <div class="parent">
+            <!-- Outside Bars -->
+            <canvas class="outside graph"></canvas>
+            <script>
+                Chart.defaults.global.defaultFontFamily = 'Oswald, sans-serif';
+                var colors = new Array(7).fill("#dd89e9");
+                var myOut = document.querySelector(".outside").getContext("2d");
+                    var outsideGraph = new Chart(myOut, {
+                        type: "bar",
+                        data: {
+                            labels: ["< 20", "20-25", "30-35", "35-40", "40-45", "45 >"],
+                            datasets: [{
+                                backgroundColor: colors,
+                                data: [8, 40, 62, 68, 52, 49, 20]
+                            }],
                         },
-                        title: {
-                            display: true,
-                            text: "Leeftijd",
-                            fontColor: "#9c55b5",
-                            fontSize: 24,
-                            fontStyle: "bold"
-                        },
-                        scales: {
-                            xAxes: [{
-                                scaleLabel: {
-                                    display: true, 
-                                    fontColor: "#9c55b5",
-                                    labelString: "Klik voor details"
-                                }
-                            }]
+                        options: {
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: "Leeftijd",
+                                fontColor: "#9c55b5",
+                                fontSize: 24,
+                                fontStyle: "bold"
+                            },
                         }
-                    }
-                })
-        </script>
+                    })
+            </script>
+            <div class='son'>
+                <!-- Doughnut Graph -->
+                <canvas class="doughnut graph"></canvas>
+                <script>
+                    Chart.defaults.global.defaultFontFamily = 'Oswald, sans-serif';
+                    var myDoughnut = document.querySelector(".doughnut").getContext("2d");
+                        var doughnutGraph = new Chart(myDoughnut, {
+                            type: "doughnut",
+                            data: {
+                                labels: ["Water", "Brandstof", "Eten"],
+                                datasets: [{
+                                    backgroundColor: ["#f16d47", "#ffc727", "#7e6ed5"],
+                                    data: [30, 50, 20]
+                                }],
+                            },
+                            options: {
+                                aspectRatio: 1,
+                                title: {
+                                    display: true,
+                                    text: "Voorraden",
+                                    fontColor: "#9c55b5",
+                                    fontSize: 24,
+                                    fontStyle: "bold"
+                                },
+                            }
+                        })
+                </script>
+
+                <!-- Inside Bars -->
+                <canvas class="bar graph"></canvas>
+                <script>
+                    Chart.defaults.global.defaultFontFamily = 'Oswald, sans-serif';
+                    var colors = new Array(7).fill("#dd89e9");
+                    var myBar = document.querySelector(".bar").getContext("2d");
+                        var outsideGraph = new Chart(myBar, {
+                            type: "bar",
+                            data: {
+                                labels: ["< 20", "20-25", "30-35", "35-40", "40-45", "45 >"],
+                                datasets: [{
+                                    backgroundColor: colors,
+                                    data: [8, 40, 62, 68, 52, 49, 20]
+                                }],
+                            },
+                            options: {
+                                legend: {
+                                    display: false
+                                },
+                                title: {
+                                    display: true,
+                                    text: "Leeftijd",
+                                    fontColor: "#9c55b5",
+                                    fontSize: 24,
+                                    fontStyle: "bold"
+                                },
+                            }
+                        })
+                </script>
+
+                <!-- Pie Chart -->
+                <canvas class="pie graph">
+                </canvas>
+                <script>
+                    Chart.defaults.global.defaultFontFamily = 'Oswald, sans-serif';
+                    var myPie = document.querySelector(".pie").getContext('2d');
+                    var pieGraph = new Chart(myPie, {
+                        type: "pie",
+                        data: {
+                            labels: ["Amerika", "Europa", "Azië", "Afrika"],
+                            datasets: [{
+                                backgroundColor: ['#76d8c9', '#59aed3', '#f26a6c', '#fee066'],
+                                data: [25, 46, 21, 8]
+                            }]
+                        },
+                        options: {
+                            aspectRatio: 1,
+                            title: {
+                                display: true,
+                                text: "Afkomst passagiers",
+                                fontColor: "#9c55b5",
+                                fontSize: 24,
+                                fontStyle: "bold"
+                            },
+                        }
+                    })
+                </script>
+            </div>
+        </div>
+
     </body>

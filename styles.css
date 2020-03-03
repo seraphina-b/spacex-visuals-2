@@ -1,29 +1,95 @@
 /* Mobile */
 @media screen and (max-width: 767px) {
-    .bar, .outside {
-        max-width: 50vw;
+    .parent {
+        flex-direction: column;
+    }
+
+    .son {
+        flex-direction: column;
+    }
+    
+    .outside {
+        max-width: 75vw;
+    }
+
+    .doughnut, .pie {
+        max-width: 50vw
+    }
+
+    .bar {
+        display: none !important;
     }
 }
 
 /* Tablet */
 @media screen and (max-width: 1023px) {
+    .parent {
+        flex-direction: column;
+    }
 
+    .son {
+        flex-direction: row;
+    }
+
+    .outside {
+        max-width: 70vw;
+    }
+
+    .doughnut, .pie {
+        max-width: 35vw;
+    }
+
+    .bar {
+        display: none !important;
+    }
 }
 
 /* Lil web */
 @media screen and (max-width: 1279px) {
-    .bar, .outside {
+    .parent {
+        flex-direction: column;
+    }
+
+    .son {
+        flex-direction: row;
+    }
+    
+    .outside {
         max-width: 36vw;
     }
+
+    .doughnut, .pie {
+        max-width: 18vw;
+    }
+
+    .bar {
+        display: none !important;
+    }
+
 }
 
 /* Big web */
 @media screen and (min-width: 1280px) {
-    .bar, .outside {
+    .parent {
+        flex-direction: row;
+    }
+
+    .son {
+        flex-direction: row;
+    }
+
+    .bar {
         max-width: 36vw;
     }
-}
 
+    .doughnut, .pie {
+        max-width: 18vw;
+    }
+
+    .outside {
+        display: none !important;
+    }
+}
 
 
 html, body, .viewport {
@@ -46,9 +112,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 10px 20px;
     width: 100%;
     box-sizing: border-box;
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.son {
+    display: flex;
 }
 
 .graph {
