@@ -5,8 +5,52 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="./styles.css" />
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src="https://kit.fontawesome.com/36987b9d6c.js" crossorigin="anonymous"></script>
         <title>SpaceX</title>
     </head>
     <body>
-        <canvas class="graph"></canvas>
+        <div id="navbar">
+            <i class="fas fa-bars fa-3x"></i>
+            <div style="font-size: 60px">SpaceX</div>
+            <i class="fas fa-user-circle fa-3x"></i>
+        </div>
+        <div style="font-size: 24px">Live informatie vanuit SpaceX</div>
+        <!-- Outside Arc -->
+        <canvas class="outside graph"></canvas>
+        <script>
+            Chart.defaults.global.defaultFontFamily = 'Oswald, sans-serif';
+            var colors = new Array(7).fill("#dd89e9");
+            var myOut = document.querySelector(".outside").getContext("2d");
+                var outsideGraph = new Chart(myOut, {
+                    type: "bar",
+                    data: {
+                        labels: ["< 20", "20-25", "30-35", "35-40", "40-45", "45 >"],
+                        datasets: [{
+                            backgroundColor: colors,
+                            data: [8, 40, 62, 68, 52, 49, 20]
+                        }],
+                    },
+                    options: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: "Leeftijd",
+                            fontColor: "#9c55b5",
+                            fontSize: 24,
+                            fontStyle: "bold"
+                        },
+                        scales: {
+                            xAxes: [{
+                                scaleLabel: {
+                                    display: true, 
+                                    fontColor: "#9c55b5",
+                                    labelString: "Klik voor details"
+                                }
+                            }]
+                        }
+                    }
+                })
+        </script>
     </body>

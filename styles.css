@@ -1,6 +1,8 @@
 /* Mobile */
 @media screen and (max-width: 767px) {
-
+    .bar, .outside {
+        max-width: 50vw;
+    }
 }
 
 /* Tablet */
@@ -10,18 +12,50 @@
 
 /* Lil web */
 @media screen and (max-width: 1279px) {
-
+    .bar, .outside {
+        max-width: 36vw;
+    }
 }
 
 /* Big web */
 @media screen and (min-width: 1280px) {
-    
+    .bar, .outside {
+        max-width: 36vw;
+    }
+}
+
+
+
+html, body, .viewport {
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 
 body {
-    background-color: #fbe4ff
+    background-color: #fbe4ff;
+    color: #9c55b5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+#navbar {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .graph {
-    background-color: #ffffff
+    background-color: #ffffff;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
+
